@@ -1,5 +1,6 @@
 package com.ems.imcatividade01;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ public class SegundaActivity extends AppCompatActivity {
     Button btStatus, btVoltar;
     TextView resultadoImc;
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +23,9 @@ public class SegundaActivity extends AppCompatActivity {
         Bundle dados = it.getExtras();
 
         final IMC imc = new IMC();
-        imc.setPeso(dados.getFloat("peso"));
-        imc.setAltura(dados.getDouble("altura"));
+        assert dados != null;
+        imc.setPeso(dados.getFloat("peso"));        // ADICIONADO
+        imc.setAltura(dados.getDouble("altura"));   // ADICIONADO
         imc.calcularIMC();
 
         resultadoImc = findViewById(R.id.textIMC);

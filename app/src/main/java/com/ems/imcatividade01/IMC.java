@@ -17,7 +17,7 @@ public final class IMC implements Serializable {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    void setPeso(float peso) {
         this.peso = peso;
     }
 
@@ -25,21 +25,23 @@ public final class IMC implements Serializable {
         return altura;
     }
 
-    public void setAltura(Double altura) {
+    void setAltura(Double altura) {
         this.altura = altura;
     }
 
-    public Double getImc() {
+    Double getImc() {
         return imc;
     }
 
-    public String getMensagem() {
+    String getMensagem() {
         return mensagem;
     }
 
-    public void calcularIMC() {
+    void calcularIMC() {
         imc = peso / Math.pow(altura, 2);
         faixas();
+
+
     }
 
     private void faixas() {
@@ -73,7 +75,7 @@ class FaixasImc {
     private double vlInicial;
     private double vlFinal;
 
-    public String getMensagem() {
+    String getMensagem() {
         return mensagem;
     }
 
@@ -81,7 +83,7 @@ class FaixasImc {
         this.mensagem = mensagem;
     }
 
-    public double getVlInicial() {
+    double getVlInicial() {
         return vlInicial;
     }
 
@@ -89,7 +91,7 @@ class FaixasImc {
         this.vlInicial = vlInicial;
     }
 
-    public double getVlFinal() {
+    double getVlFinal() {
         return vlFinal;
     }
 
@@ -97,7 +99,7 @@ class FaixasImc {
         this.vlFinal = vlFinal;
     }
 
-    public FaixasImc(String mensagem, double vlInicial, double vlFinal) {
+    FaixasImc(String mensagem, double vlInicial, double vlFinal) {
         this.mensagem = mensagem;
         this.vlInicial = vlInicial;
         this.vlFinal = vlFinal;

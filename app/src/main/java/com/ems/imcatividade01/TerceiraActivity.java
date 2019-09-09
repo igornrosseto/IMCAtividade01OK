@@ -16,24 +16,14 @@ public class TerceiraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terceira);
 
+        textStatus = findViewById(R.id.textStatus);  // ADICIONADO
         Intent it = getIntent();
         Bundle dados = it.getExtras();
 
-
-        IMC imc = (IMC) dados.getSerializable("objIMC");
-
-
+        assert dados != null;
+        IMC imc = (IMC) dados.getSerializable("objIMC"); // valor do imc TIPO DOUBLE
+        assert imc != null;
         textStatus.setText(imc.getMensagem());
-
-
-
-
-
-
-
-
-
-
 
 
         Button v = findViewById(R.id.btVoltarIMC);
